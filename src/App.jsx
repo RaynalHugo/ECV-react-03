@@ -10,10 +10,16 @@ function App() {
         .then(response => response.json())
         .then(result => setSelectedPokemon(result))
   },[])
-
+  console.log(selectedPokemon?.sprites)
   return (
     <div className="App">
-      <pre>{JSON.stringify(selectedPokemon, null, 2)}</pre>
+      {selectedPokemon != undefined ?
+          <div className="card">
+            <h2>{selectedPokemon.name}</h2>
+            <img src={selectedPokemon.sprites.front_default} alt="image de pikachu"/>
+          </div> :"Loading..."
+      }
+      {/*<pre>{JSON.stringify(selectedPokemon, null, 2)}</pre>*/}
     </div>
   )
 }
