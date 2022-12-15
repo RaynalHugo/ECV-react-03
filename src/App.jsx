@@ -7,7 +7,6 @@ import {Card} from './Card'
 function App() {
     const [pokemons, setPokemons] = useState()
     const [inputName, setInputName] = useState('')
-    console.log(pokemons)
 
     useEffect(() => {
         fetch('https://pokeapi.co/api/v2/pokemon-species?offset=0&limit=1000')

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import styles from './Card.module.css'
-//console.log(styles.card); récupérer le nom d'une class module
 
 const typeColor = {
   bug: "#26de81",
@@ -36,13 +35,12 @@ export function Card({ name, url }) {
   </div>);
   }
 
-  console.log(pokemon)
-
   const{types} = pokemon;
   const firstType = types[0].type.name;
-  console.log(firstType);
+  const secondType = types[1]?.type?.name;
+  const background = secondType != undefined ? `linear-gradient(${typeColor[firstType]}, ${typeColor[secondType]})` : typeColor[firstType]
 
-  return (<div className={styles.card} style={{backgroundColor:typeColor[firstType]}}>
+  return (<div className={styles.card} style={{background}}>
     <h2>{pokemon.name}</h2>
     <img src={pokemon.sprites.other.dream_world.front_default} alt="image de pikachu" />
   </div>);
