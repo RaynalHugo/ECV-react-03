@@ -4,21 +4,3 @@
   padding: 2rem;
   text-align: center;
 }
-
-.App .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 350px;
-  height: 500px;
-  border: solid 1px black;
-  border-radius: 5%;
-  background-color: white;
-  color: black;
-  overflow: hidden;
-}
-
-.App .card img {
-  width: 100px;
-  height: 100px;
-}
