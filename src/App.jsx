@@ -6,15 +6,19 @@ import { Card } from './Card'
 // Requête vers API + affichage composant Card
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState()
+  const [inputName, setInputName] = useState('')
+  console.log(inputName)
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/pikachu/")
+    fetch(`https://pokeapi.co/api/v2/pokemon/${inputName}/`)
       .then(response => response.json())
       .then(result => setSelectedPokemon(result))
-  }, [])
-  console.log(selectedPokemon?.types)
+  }, [inputName])
   return (
     <div className="App">
+      <input type="text" value={inputName} onChange={(event) => {
+        setInputName(event.target.value)
+      }} />
       {selectedPokemon != undefined ?
         <Card pokemon={selectedPokemon} /> : "Loading..."
       }
