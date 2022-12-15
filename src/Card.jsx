@@ -43,5 +43,9 @@ export function Card({ name, url }) {
   return (<div className={styles.card} style={{background}}>
     <h2>{pokemon.name}</h2>
     <img src={pokemon.sprites.other.dream_world.front_default} alt="image de pikachu" />
+    <span>Health: {pokemon.stats[0].base_stat}</span>
+    <span>Attack: {pokemon.stats[1].base_stat}</span>
+    <span>Defense: {pokemon.stats[2].base_stat}</span>
+    <span>Speed: {pokemon.stats[5].base_stat}</span>
   </div>);
 }
