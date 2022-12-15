@@ -20,9 +20,9 @@ function App() {
       <input type="text" value={inputName} onChange={(event) => {
         setInputName(event.target.value)
       }} />
-      {pokemons !==undefined ? pokemons.map((pokemon) => {
+      {pokemons !==undefined ? <div className={"wrapper"}>{pokemons.map((pokemon) => {
         return <Card name={pokemon.name} url={pokemon.url} />
-      }) : 'loading...' }
+      })}</div> : 'loading...' }
     </div>
   )
 }

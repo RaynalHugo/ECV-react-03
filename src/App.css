@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+.wrapper {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 25px;
+  gap: 10px;
+}
